@@ -1,25 +1,28 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
+    <%= link_to "Mes listes", lists_path, class:"btn btn-secondary" %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <%= link_to "Mes listes", lists_path, class:"btn btn-primary" %>
-          </li>
           <li class="nav-item">
-            <%= link_to "Ajouter une liste", new_list_path, class:"btn btn-primary" %>
+            <%= link_to "Ajouter une liste", new_list_path, class:"btn btn-secondary" %>
           </li>
       </ul>
     </div>
   </div>
 </div>
-<div class="containe">
-  <ul>
+<div class="cards-list">
     <% @lists.each do |list| %>
-      <li><%= link_to list.name, list_path(list) %></li>
-    <% end %>
-  </ul>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to list.name, list_path(list) %>
+    </div>
+  <% end %>
 </div>
+
+
+
+
+<%# <%= cl_image_tag("zycd4jleuq8jzpojbi1p",
+      width: 400, height: 300, crop: :fill) %>
+
+<%# <%= cl_image_tag("xswha7fsy8ldtddyz0dl",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
