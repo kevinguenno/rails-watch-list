@@ -20,12 +20,16 @@ image_4 = URI.open("https://images.unsplash.com/photo-1598899134739-24c46f58b8c0
 puts "Creating 4 lists ..."
 list_1 = List.new(name: "Drame")
 list_1.photo.attach(io: image_1, filename: "image-1.png", content_type: "image.png")
+list_1.save
 list_2 = List.new(name: "Comedie")
 list_2.photo.attach(io: image_2, filename: "image-2.png", content_type: "image.png")
+list_2.save
 list_3 = List.new(name: "Documentaire")
 list_3.photo.attach(io: image_3, filename: "image-3.png", content_type: "image.png")
+list_3.save
 list_4 = List.new(name: "Guerre")
 list_4.photo.attach(io: image_4, filename: "image-4.png", content_type: "image.png")
+list_4.save
 
 puts "Creating 4 bookmarks ..."
 Bookmark.create({ list: list_1, movie: movie_1, comment: "superbe collection" })
