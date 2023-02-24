@@ -1,9 +1,25 @@
-<h4>Mes listes</h4>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Ajouter une liste", new_list_path %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "Mes listes", lists_path, class:"btn btn-primary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Ajouter une liste", new_list_path, class:"btn btn-primary" %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="containe">
+  <ul>
+    <% @lists.each do |list| %>
+      <li><%= link_to list.name, list_path(list) %></li>
+    <% end %>
+  </ul>
+</div>
