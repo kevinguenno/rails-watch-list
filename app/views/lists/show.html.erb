@@ -12,7 +12,6 @@
 </div>
 <div class="container">
   <h4><%= @list.name %></h4>
-  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
   <ul>
     <% @bookmarks.each do |bookmark|%>
       <li><h5><%= bookmark.movie.title %></h5></li>
